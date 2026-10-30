@@ -1,26 +1,31 @@
-#%%
-def calculadoraimc():
-    peso = float(input("Bem-vindo a Calculadora de IMC! Para começar, insira o seu pedo em kg: "))
-    altura = float(input("Agora insira a sua altura: "))
+import streamlit as st
 
+st.title("Calculadora de IMC")
+st.subheader("Descubra como está o seu Índice de Massa Corporal")
+st.write("")
+st.write("")
+
+peso_str = st.text_input("Insira o seu peso em kg: ")
+altura_str = st.text_input("Agora insira a sua altura: Exemplo 1.70 ")
+
+if st.button("Calcular IMC"):
+
+    peso = float(peso_str)
+    altura = float(altura_str)
     imc = peso / (altura * altura)
+    st.write(f"O seu IMC é de: {imc}")
 
     if imc < 18.5:
-        print("Você está abaixo do peso. O seu IMC indica Magreza.")
+        st.subheader("Você está abaixo do peso. O seu IMC indica Magreza.")
     elif imc >= 18.5 and imc <= 24.9:
-        print("Você está dentro do peso. O seu IMC indica Eutrófico.")
+        st.subheader("Você está dentro do peso. O seu IMC indica Eutrófico.")
     elif imc >= 25 and imc <= 29.9:
-        print("Você está em sobrepeso. O seu IMC indica Pré-obesidade.")
+        st.subheader("Você está em sobrepeso. O seu IMC indica Pré-obesidade.")
     elif imc >= 30 and imc <= 34.9:
-        print("Você está em obesidade. O seu IMC indica Obesidade grau I.")
+        st.subheader("Você está em obesidade. O seu IMC indica Obesidade grau I.")
     elif imc >= 35 and imc <= 39.9:
-        print("Você está em obesidade. O seu IMC indica Obesidade grau II.")
+        st.subheader("Você está em obesidade. O seu IMC indica Obesidade grau II.")
     elif imc >= 40:
-        print("Você está em obesidade. O seu IMC indica Obesidade grau III, Mórbida.")
+        st.subheader("Você está em obesidade. O seu IMC indica Obesidade grau III, Mórbida.")
     else:
-        print("Ops, algo deu errado! Reinicie novamente a calculadora. Tchau!")
-
-# %%
-
-# %%
-calculadoraimc()
+        st.subheader("Ops, algo deu errado! Reinicie novamente a calculadora. Tchau!")
