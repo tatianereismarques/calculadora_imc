@@ -1,7 +1,7 @@
 # Calculadora de IMC
 Aplicação web interativa desenvolvida em Python, utilizando a biblioteca Streamlit, desenvolvida para calcular de forma intuitiva o Índice de Massa Corporal (IMC).
 
-# Tecnologias utilizadas: 
+# Recursos utilizados: 
 Python (linguagem de programação)
 Streamlit (Biblioteca para criação de interfaces web)
 
