@@ -1,16 +1,18 @@
 import streamlit as st
 
-def calculadora_imc():
+st.title("Calculadora de IMC")
+st.subheader("Descubra como está o seu Índice de Massa Corporal")
+st.write("")
+st.write("")
 
-    st.title("Calculadora de IMC")
-    st.subheader("Descubra como está o seu Índice de Massa Corporal")
-    st.write("")
-    st.write("")
+peso_str = st.text_input("Insira o seu peso em kg: ")
+altura_str = st.text_input("Agora insira a sua altura: Exemplo 1.70 ")
 
-    peso_str = st.text_input("Insira o seu peso em kg: ")
-    altura_str = st.text_input("Agora insira a sua altura: Exemplo 1.70 ")
+if st.button("Calcular IMC"):
 
-    if st.button("Calcular IMC"):
+    if not "." in altura_str:
+        st.subheader("Insira um valor válido para altura, no formato 0.00.") 
+    else:
 
         peso = float(peso_str)
         altura = float(altura_str)
